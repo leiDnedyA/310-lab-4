@@ -38,3 +38,28 @@ way backwords, so rather than checking if every element can reach the end, you c
 find the closest element to the end that can reach it, and set that to be the new 
 target. We continue this until we get to the first element, and check if it can 
 reach any of the elements that can somehow reach the end.
+
+## Q4
+
+**O(nlogn)** - Merge sort is used on the items to sort them in order of value.
+
+This is very similar to the coin problem, but rather than picking the largest capacity
+that will fit in the bag, we pick the item with the largest value that will fit in 
+the bag.
+
+## Q5
+
+**O(n + m)** - Where `n` is the total number of arrivals / departures, and `m` is 
+               the maximum departure time.
+
+This solution creates an array with an entry for each time unit (minutes), adding one 
+and subtracting one from the minute corresponding to each arrival/departure time. With 
+this array representation, to find the number of platforms at any given time, you can 
+take the cumulative sum from the start until any given minute to find the number of 
+platforms needed at that point in time.
+
+To find the maximum number of trains in the station at any given time, we can take the 
+cumulative sum for the entire array in a for loop, and use a variable called `result` to 
+keep track of the max number of trains seen so far. Finally, we return `result`.
+
+## Q6

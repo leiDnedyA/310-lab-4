@@ -69,3 +69,24 @@ keep track of the max number of trains seen so far. Finally, we return `result`.
 This is exactly the same problem as [Q2](#q2)
 
 ## Q7
+
+**O(n\*log(n))** - **n** activities to sort using merge sort.
+
+Using the explanation provided by the professor for [Q2](#q2), we can assume that 
+activities can be completed in any order. Based on this, our problem boils down to 
+a more complicated version of the coin change problem [Q1](#q1). My solution works 
+as follows:
+
+1. Convert the list of `activities` into a new list, `durations`, containing integers
+   representing the duration of each activity. 
+2. Create a variable `min_duration`, and store the minimum of all of the durations.
+3. Create a variable `min_count`, initialize it to `0`, and iterate through `durations`
+   to get a count of how many times the value in `min_duration` occurs in `durations`.
+4. Create a variable `result`, initialize it to `0`, and `remaining_time`, and set it to `8`.
+    - Keep in mind that in [Q2](#q2), we decided that we would pick `8` as the arbitrary
+      maximum amount of time that someone can work / do activities.
+5. Use a for loop to iterate through the range `[0, min_count)` for each iteration:
+    1. If `min_count == 0` or `remaining_time < min_duration`, break.
+    2. Otherwise, subtract 1 from `min_count`, subtract `min_duration` from 
+       `remaining_time`, and add 1 to `result`.
+6. Return `result`.

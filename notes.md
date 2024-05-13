@@ -90,3 +90,19 @@ as follows:
     2. Otherwise, subtract 1 from `min_count`, subtract `min_duration` from 
        `remaining_time`, and add 1 to `result`.
 6. Return `result`.
+
+## Q8
+
+**O(n)** - Iterates once through `prices`.
+
+This solution uses two pointers, `i` and `j` to scan through `prices` and keep track 
+of the current buy and sell time indices. The steps are as follows:
+
+1. Initialize `curr_max` to `0`, `i` to `0`, and `j` to `1`.
+2. Start a while loop with a condition of `j < len(prices)`.
+    1. If the buy/sell times are currently profitable, check if the current profit is 
+       better than `curr_max`'s profit, and if it is, set `curr_max` to the current 
+       profit.
+    2. If the buy/sell is not currently profitable, increase `i` by `1`.
+    3. Whether or not the buy/sell times are currently profitable, increase `j` by `1`.
+3. Return `curr_max`

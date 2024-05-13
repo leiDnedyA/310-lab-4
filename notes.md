@@ -63,3 +63,9 @@ cumulative sum for the entire array in a for loop, and use a variable called `re
 keep track of the max number of trains seen so far. Finally, we return `result`.
 
 ## Q6
+
+**O(n\*log(n))** - **n** activities to sort using merge sort.
+
+This is exactly the same problem as [Q2](#q2)
+
+## Q7
